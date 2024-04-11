@@ -47,8 +47,10 @@ public class StudentsRepository {
         this.res1.add(student);
     }
 
+    /**
+     * Найти всех студентов отличников, то есть студентов, у которых все оценки отличные
+     */
     
-
     @Override
     public String toString() {
         return "StudentsRepository{" +
