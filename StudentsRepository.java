@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 public class StudentsRepository {
     private ArrayList<Students> res1 = new ArrayList<Students>();
+    ArrayList<Integer> grades = new ArrayList<>();
 
     public StudentsRepository() {
     }
@@ -20,7 +21,6 @@ public class StudentsRepository {
                     //String name = split[1];
                     //int course = Integer.parseInt(split[2]);
 
-                    ArrayList<Integer> grades = new ArrayList<>();
                     for (int i = 3; i < split.length; i++) {
                         grades.add(Integer.parseInt(split[i]));
                     }
@@ -50,8 +50,20 @@ public class StudentsRepository {
     /**
      * Найти всех студентов отличников, то есть студентов, у которых все оценки отличные
      */
-    public Student search(ArrayList<Student> student) {
-
+    public Student search() {
+        boolean ocenka = true;
+        for (Integer i : this.grades) {
+            if (i != 5) {
+                ocenka = false;
+                break;
+            }
+            if (ocenka) {
+                return this;
+            } else {
+                return null;
+            }
+        }
+        return null;
     }
 
     /**
