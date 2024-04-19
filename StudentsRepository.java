@@ -51,13 +51,13 @@ public class StudentsRepository {
      * Найти всех студентов отличников, то есть студентов, у которых все оценки отличные
      */
     public Student search() {
-        boolean ocenka = true;
+        boolean grade = true;
         for (Integer i : this.grades) {
             if (i != 5) {
-                ocenka = false;
+                grade = false;
                 break;
             }
-            if (ocenka) {
+            if (grade) {
                 return this;
             } else {
                 return null;
